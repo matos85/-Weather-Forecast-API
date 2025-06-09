@@ -91,41 +91,6 @@ http://localhost:8002/
 
 ---
 
-## 🗃️ Структура проекта
-
-```
-weather-api/
-├── weather_api/           # Django-проект
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── weather/               # Приложение с логикой API
-│   ├── models.py
-│   ├── views.py
-│   ├── serializers.py
-│   ├── urls.py
-│   └── admin.py
-├── manage.py
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-├── .env.template
-└── README.md
-```
-
----
-
-## 🔐 Администрирование
-
-Суперпользователь создаётся автоматически, если заданы следующие переменные в `.env`:
-
-```env
-DJANGO_SUPERUSER_USERNAME=admin
-DJANGO_SUPERUSER_EMAIL=admin@example.com
-DJANGO_SUPERUSER_PASSWORD=adminpass
-```
-
 ---
 
 ## ⚠️ Примечания
