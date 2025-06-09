@@ -136,27 +136,6 @@ http://localhost:8002/
 }
 ```
 
-
-
-```
-
----
-
----
-
-## ⚠️ Примечания
-
-- Для доступа к OpenWeatherMap необходимо получить API-ключ: https://openweathermap.org/api
-- Если хотите запустить локально без Docker:
-  ```bash
-  python -m venv venv
-  source venv/bin/activate
-  pip install -r requirements.txt
-  cp .env.template .env
-  python manage.py migrate
-  python manage.py runserver
-  ```
-
 ---
 
 
