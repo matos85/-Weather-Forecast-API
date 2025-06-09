@@ -30,7 +30,7 @@ REST API для получения текущей погоды и прогноз
 ### 1. Клонируйте репозиторий
 
 ```bash
-git clone https://github.com/yourusername/weather-api.git
+git clone https://github.com/matos85/-Weather-Forecast-API
 cd weather-api
 ```
 
