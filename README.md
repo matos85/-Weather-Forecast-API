@@ -1,0 +1,146 @@
+# 🌤️ Weather Forecast API
+
+REST API для получения текущей погоды и прогноза с возможностью ручного переопределения данных. Использует [OpenWeatherMap API](https://openweathermap.org/api).
+
+---
+
+## 🚀 Возможности
+
+- Получение текущей температуры и локального времени по городу
+- Прогноз (мин/макс температура) на заданную дату
+- Ручное переопределение прогноза (POST-запрос)
+- Хранение переопределённых данных в PostgreSQL
+- Интеграция с внешним OpenWeatherMap API
+
+---
+
+## 🔧 Технологии
+
+- Python 3.11
+- Django 4.x
+- Django REST Framework
+- PostgreSQL 15
+- Gunicorn
+- Docker + Docker Compose
+
+---
+
+## ⚙️ Установка и запуск (Docker)
+
+### 1. Клонируйте репозиторий
+
+```bash
+git clone https://github.com/yourusername/weather-api.git
+cd weather-api
+```
+
+### 2. Создайте файл `.env`
+
+```bash
+cp .env.template .env
+```
+
+Заполните `.env` своими значениями:
+
+```env
+OPENWEATHERMAP_API_KEY=your_real_key
+SECRET_KEY=your_django_secret_key
+DJANGO_SUPERUSER_USERNAME=admin
+DJANGO_SUPERUSER_EMAIL=admin@example.com
+DJANGO_SUPERUSER_PASSWORD=adminpass
+```
+
+### 3. Соберите и запустите контейнеры
+
+```bash
+docker-compose up --build -d
+```
+
+### 4. Откройте приложение
+
+```txt
+http://localhost:8002/
+```
+
+---
+
+## 📌 Эндпоинты API
+
+| Метод | URL                          | Назначение                       |
+|-------|------------------------------|----------------------------------|
+| GET   | `/api/weather/current?city=` | Текущая погода и локальное время |
+| GET   | `/api/weather/forecast`      | Прогноз температуры на дату      |
+| POST  | `/api/weather/forecast`      | Переопределение прогноза         |
+
+---
+
+## 🧪 Пример запроса
+
+### Текущая погода:
+
+**GET** `/api/weather/current?city=London`
+
+**Ответ:**
+
+```json
+{
+  "temperature": 22.1,
+  "local_time": "16:45"
+}
+```
+
+---
+
+## 🗃️ Структура проекта
+
+```
+weather-api/
+├── weather_api/           # Django-проект
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── weather/               # Приложение с логикой API
+│   ├── models.py
+│   ├── views.py
+│   ├── serializers.py
+│   ├── urls.py
+│   └── admin.py
+├── manage.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── .env.template
+└── README.md
+```
+
+---
+
+## 🔐 Администрирование
+
+Суперпользователь создаётся автоматически, если заданы следующие переменные в `.env`:
+
+```env
+DJANGO_SUPERUSER_USERNAME=admin
+DJANGO_SUPERUSER_EMAIL=admin@example.com
+DJANGO_SUPERUSER_PASSWORD=adminpass
+```
+
+---
+
+## ⚠️ Примечания
+
+- Для доступа к OpenWeatherMap необходимо получить API-ключ: https://openweathermap.org/api
+- Если хотите запустить локально без Docker:
+  ```bash
+  python -m venv venv
+  source venv/bin/activate
+  pip install -r requirements.txt
+  cp .env.template .env
+  python manage.py migrate
+  python manage.py runserver
+  ```
+
+---
+
+
