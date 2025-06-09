@@ -31,35 +31,21 @@ REST API для получения текущей погоды и прогноз
 
 ```bash
 git clone https://github.com/matos85/-Weather-Forecast-API
-cd -Weather-Forecast-API/weather-api
+cd -Weather-Forecast-API/weather-api    
 ```
 
-### 2. Создайте файл `.env`
 
-```bash
-cp .env.template .env
-```
 
-Заполните `.env` своими значениями:
-
-```env
-OPENWEATHERMAP_API_KEY=your_real_key
-SECRET_KEY=your_django_secret_key
-DJANGO_SUPERUSER_USERNAME=admin
-DJANGO_SUPERUSER_EMAIL=admin@example.com
-DJANGO_SUPERUSER_PASSWORD=adminpass
-```
-
-### 3. Соберите и запустите контейнеры
+### 2. Соберите и запустите контейнеры
 
 ```bash
 docker-compose up --build -d
 ```
 
-### 4. Откройте приложение
+### 3. Откройте приложение
 
 ```txt
-http://localhost:8002/
+http://<your_server_ip>:8002/
 ```
 
 ---
