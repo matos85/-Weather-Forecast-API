@@ -31,7 +31,7 @@ REST API для получения текущей погоды и прогноз
 
 ```bash
 git clone https://github.com/matos85/-Weather-Forecast-API
-cd weather-api
+cd -Weather-Forecast-API/weather-api
 ```
 
 ### 2. Создайте файл `.env`
